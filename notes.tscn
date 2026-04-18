@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://dofyy26hb8gyk"]
+
+[ext_resource type="Theme" uid="uid://oqxsxsp3537j" path="res://email.tres" id="1_7hqtv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w2tp"]
+bg_color = Color(0.9079417, 0.9079417, 0.90794164, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.45490196, 0.87058824, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v8as4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hqtv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7w2tp"]
+
+[node name="Notes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -616.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 632.0
+offset_bottom = 576.0
+theme = ExtResource("1_7hqtv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7w2tp")
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -316.0
+offset_right = 316.0
+offset_bottom = 40.0
+grow_horizontal = 2
+color = Color(0, 0.45490196, 0.87058824, 1)
+
+[node name="TextureButton" type="TextureButton" parent="Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -12.0
+offset_right = -8.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = SubResource("PlaceholderTexture2D_v8as4")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 31.0
+theme = ExtResource("1_7hqtv")
+theme_override_font_sizes/font_size = 26
+text = "Notes"
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 616.0
+offset_bottom = 560.0
+theme_override_colors/caret_color = Color(0.00011382764, 0.00011382824, 0.000113827795, 1)
+theme_override_colors/font_color = Color(0.0056611313, 0.0056611616, 0.0056611407, 1)
+theme_override_colors/font_placeholder_color = Color(0.33660707, 0.33660787, 0.33660737, 0.6)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hqtv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7w2tp")
+placeholder_text = "type your notes here!"
+wrap_mode = 1
+scroll_past_end_of_file = true
+scroll_fit_content_width = true

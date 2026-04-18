@@ -1,0 +1,197 @@
+[gd_scene load_steps=5 format=3 uid="uid://cakpghrdmqs3n"]
+
+[ext_resource type="Theme" uid="uid://det2ttapf60iy" path="res://ui.tres" id="1_ig7tw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3478169, 0.347817, 0.34781674, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_size = 1
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ig7tw"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7dm0k"]
+size = Vector2(64, 64)
+
+[node name="Main" type="Node2D"]
+
+[node name="UIMiddle" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="HotbarIcons" type="Control" parent="UIMiddle"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="EmailSm" type="Button" parent="UIMiddle/HotbarIcons"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 48.0
+theme = ExtResource("1_ig7tw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+text = "Email"
+icon = SubResource("PlaceholderTexture2D_ig7tw")
+expand_icon = true
+
+[node name="NotesSm" type="Button" parent="UIMiddle/HotbarIcons"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 8.0
+offset_right = 296.0
+offset_bottom = 48.0
+theme = ExtResource("1_ig7tw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+text = "Notes"
+icon = SubResource("PlaceholderTexture2D_ig7tw")
+expand_icon = true
+
+[node name="DictionarySm" type="Button" parent="UIMiddle/HotbarIcons"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 8.0
+offset_right = 432.0
+offset_bottom = 48.0
+theme = ExtResource("1_ig7tw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+text = "Dictionary"
+icon = SubResource("PlaceholderTexture2D_ig7tw")
+expand_icon = true
+
+[node name="ArchivesSm" type="Button" parent="UIMiddle/HotbarIcons"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 8.0
+offset_right = 568.0
+offset_bottom = 48.0
+theme = ExtResource("1_ig7tw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+text = "Archives"
+icon = SubResource("PlaceholderTexture2D_ig7tw")
+expand_icon = true
+
+[node name="Hotbar" type="ColorRect" parent="UIMiddle/HotbarIcons"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.6156863, 0.6156863, 0.6156863, 0.827451)
+
+[node name="HotbarShadow" type="ColorRect" parent="UIMiddle/HotbarIcons/Hotbar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.37413925, 0.37413928, 0.37413922, 0.827451)
+
+[node name="DesktopIcons" type="Control" parent="UIMiddle"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -648.0
+offset_right = 160.0
+grow_vertical = 0
+
+[node name="Email" type="Button" parent="UIMiddle/DesktopIcons"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 128.0
+offset_bottom = 152.0
+theme = ExtResource("1_ig7tw")
+text = "Email"
+icon = SubResource("PlaceholderTexture2D_7dm0k")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Notes" type="Button" parent="UIMiddle/DesktopIcons"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 168.0
+offset_right = 128.0
+offset_bottom = 280.0
+theme = ExtResource("1_ig7tw")
+text = "Notes"
+icon = SubResource("PlaceholderTexture2D_7dm0k")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Dictionary" type="Button" parent="UIMiddle/DesktopIcons"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 296.0
+offset_right = 128.0
+offset_bottom = 408.0
+theme = ExtResource("1_ig7tw")
+theme_override_font_sizes/font_size = 13
+text = "Dictionary"
+icon = SubResource("PlaceholderTexture2D_7dm0k")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Archives" type="Button" parent="UIMiddle/DesktopIcons"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 424.0
+offset_right = 127.0
+offset_bottom = 536.0
+theme = ExtResource("1_ig7tw")
+theme_override_font_sizes/font_size = 18
+text = "Archives"
+icon = SubResource("PlaceholderTexture2D_7dm0k")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="UIBottom" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="ColorRect" parent="UIBottom"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.020019531
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 11.77
+color = Color(1.6605109e-06, 0.3841854, 0.38418546, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="UITop" type="CanvasLayer" parent="."]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4lqmkmnn4y54"]
+
+[ext_resource type="Theme" uid="uid://oqxsxsp3537j" path="res://email.tres" id="1_sh8dr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mofv7"]
+bg_color = Color(0.63375676, 0.6337568, 0.63375676, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.45490196, 0.87058824, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_512ym"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sh8dr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sh8dr"]
+
+[node name="archives" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -520.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 632.0
+offset_bottom = 576.0
+theme = ExtResource("1_sh8dr")
+theme_override_styles/panel = SubResource("StyleBoxFlat_mofv7")
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -316.0
+offset_right = 316.0
+offset_bottom = 40.0
+grow_horizontal = 2
+color = Color(0, 0.45490196, 0.87058824, 1)
+
+[node name="TextureButton" type="TextureButton" parent="Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -12.0
+offset_right = -8.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = SubResource("PlaceholderTexture2D_512ym")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 31.0
+theme = ExtResource("1_sh8dr")
+theme_override_font_sizes/font_size = 26
+text = "Archives"
+vertical_alignment = 1
+
+[node name="ArchiveList" type="ItemList" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 184.0
+offset_bottom = 568.0
+theme_override_constants/outline_size = 0
+theme_override_constants/line_separation = 2
+item_count = 1
+fixed_icon_size = Vector2i(18, 16)
+item_0/text = "Broken Codex"
+item_0/icon = SubResource("PlaceholderTexture2D_sh8dr")
+
+[node name="ArchiveContent" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 48.0
+offset_right = 624.0
+offset_bottom = 568.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sh8dr")

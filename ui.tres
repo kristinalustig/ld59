@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://det2ttapf60iy"]
+
+[ext_resource type="FontFile" uid="uid://cq8mqpjdyth6a" path="res://CourierPrime-Bold.ttf" id="1_i6sfk"]
+[ext_resource type="FontFile" uid="uid://cfg2r3laan4y" path="res://CourierPrime-Regular.ttf" id="2_iokc4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iokc4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i6sfk"]
+
+[resource]
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_i6sfk")
+Button/styles/disabled = SubResource("StyleBoxEmpty_iokc4")
+Button/styles/normal = SubResource("StyleBoxEmpty_i6sfk")
+TextEdit/fonts/font = ExtResource("2_iokc4")
