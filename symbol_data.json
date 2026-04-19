@@ -1,0 +1,80 @@
+{
+  "message": {
+    "spritesheet_index": 1
+  },
+  "receive": {
+    "spritesheet_index": 2
+  },
+  "civilization": {
+    "spritesheet_index": 3
+  },
+  "Lasillian": {
+    "spritesheet_index": 4
+  },
+  "up": {
+    "spritesheet_index": 5
+  },
+  "correct": {
+    "spritesheet_index": 6
+  },
+  "we": {
+    "spritesheet_index": 7
+  },
+  "you": {
+    "spritesheet_index": 8
+  },
+  "few": {
+    "spritesheet_index": 9
+  },
+  "present": {
+    "spritesheet_index": 10
+  },
+  "not": {
+    "spritesheet_index": 11
+  },
+  "work": {
+    "spritesheet_index": 12
+  },
+  "very": {
+    "spritesheet_index": 13
+  },
+  "who": {
+    "spritesheet_index": 14
+  },
+  "soon": {
+    "spritesheet_index": 15
+  },
+  "time": {
+    "spritesheet_index": 16
+  },
+  "past": {
+    "spritesheet_index": 17
+  },
+  "include": {
+    "spritesheet_index": 18
+  },
+  "out": {
+    "spritesheet_index": 19
+  },
+  "important": {
+    "spritesheet_index": 20
+  },
+  "this": {
+    "spritesheet_index": 21
+  },
+  "archives": {
+    "spritesheet_index": 22
+  },
+  "when": {
+    "spritesheet_index": 23
+  },
+  "be": {
+    "spritesheet_index": 24
+  },
+  "know": {
+    "spritesheet_index": 25
+  },
+  "future": {
+    "spritesheet_index": 26
+  }
+}

@@ -1,9 +1,109 @@
-[gd_scene format=3 uid="uid://dk1taob4i64no"]
+[gd_scene load_steps=8 format=3 uid="uid://dk1taob4i64no"]
+
+[ext_resource type="Theme" uid="uid://oqxsxsp3537j" path="res://email.tres" id="1_3nro6"]
+[ext_resource type="PackedScene" uid="uid://csi37cl5n476o" path="res://dict_item.tscn" id="2_t4mx2"]
+[ext_resource type="PackedScene" uid="uid://biud3lg5m703o" path="res://item.tscn" id="3_y7euc"]
+[ext_resource type="Script" uid="uid://c2fk2ik5q8fkr" path="res://symbol_box.gd" id="3_yg63m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4mx2"]
+bg_color = Color(0, 0.11372549, 0.24705882, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.45490196, 0.87058824, 1)
+shadow_size = 2
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y7euc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nro6"]
+bg_color = Color(0.5764706, 0.7647059, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [node name="Dictionary" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -88.0
+offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1064.0
+offset_bottom = 592.0
+mouse_filter = 2
+theme = ExtResource("1_3nro6")
+theme_override_styles/panel = SubResource("StyleBoxFlat_t4mx2")
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -532.0
+offset_right = 532.0
+offset_bottom = 40.0
+grow_horizontal = 2
+color = Color(0, 0.45490196, 0.87058824, 1)
+
+[node name="TextureButton" type="TextureButton" parent="Background/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -12.0
+offset_right = -8.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = SubResource("PlaceholderTexture2D_y7euc")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Background/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 31.0
+theme = ExtResource("1_3nro6")
+theme_override_font_sizes/font_size = 26
+text = "Dictionary"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 48.0
+offset_right = 1056.0
+offset_bottom = 584.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3nro6")
+
+[node name="ActiveDict" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DictItem" parent="ScrollContainer/ActiveDict" instance=ExtResource("2_t4mx2")]
+layout_mode = 2
+
+[node name="SymbolBox" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 50.0
+offset_right = 504.0
+offset_bottom = 584.0
+script = ExtResource("3_yg63m")
+
+[node name="Item" parent="SymbolBox" instance=ExtResource("3_y7euc")]
+layout_mode = 2
+size_flags_vertical = 0

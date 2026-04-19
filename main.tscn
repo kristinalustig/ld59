@@ -1,6 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cakpghrdmqs3n"]
+[gd_scene load_steps=11 format=3 uid="uid://cakpghrdmqs3n"]
 
 [ext_resource type="Theme" uid="uid://det2ttapf60iy" path="res://ui.tres" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://377fgaluprhn" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://j4duwwf73uad" path="res://email.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dofyy26hb8gyk" path="res://notes.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d4lqmkmnn4y54" path="res://archives.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dk1taob4i64no" path="res://dictionary.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://dg3xlh4og8c5d" path="res://dictionary.gd" id="7_272bh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
 draw_center = false
@@ -25,6 +31,7 @@ shadow_size = 1
 size = Vector2(64, 64)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_lquwl")
 
 [node name="UIMiddle" type="CanvasLayer" parent="."]
 layer = 0
@@ -38,58 +45,60 @@ anchor_bottom = 1.0
 offset_top = -56.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="EmailSm" type="Button" parent="UIMiddle/HotbarIcons"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 8.0
-offset_right = 160.0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 40.0
 offset_bottom = 48.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_ig7tw")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
-text = "Email"
+toggle_mode = true
 icon = SubResource("PlaceholderTexture2D_ig7tw")
 expand_icon = true
 
 [node name="NotesSm" type="Button" parent="UIMiddle/HotbarIcons"]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 8.0
-offset_right = 296.0
+offset_left = 56.0
+offset_top = 16.0
+offset_right = 88.0
 offset_bottom = 48.0
 theme = ExtResource("1_ig7tw")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
-text = "Notes"
+toggle_mode = true
 icon = SubResource("PlaceholderTexture2D_ig7tw")
 expand_icon = true
 
 [node name="DictionarySm" type="Button" parent="UIMiddle/HotbarIcons"]
 layout_mode = 0
-offset_left = 312.0
-offset_top = 8.0
-offset_right = 432.0
+offset_left = 104.0
+offset_top = 16.0
+offset_right = 136.0
 offset_bottom = 48.0
 theme = ExtResource("1_ig7tw")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
-text = "Dictionary"
+toggle_mode = true
 icon = SubResource("PlaceholderTexture2D_ig7tw")
 expand_icon = true
 
 [node name="ArchivesSm" type="Button" parent="UIMiddle/HotbarIcons"]
 layout_mode = 0
-offset_left = 448.0
-offset_top = 8.0
-offset_right = 568.0
+offset_left = 152.0
+offset_top = 16.0
+offset_right = 184.0
 offset_bottom = 48.0
 theme = ExtResource("1_ig7tw")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
-text = "Archives"
+toggle_mode = true
 icon = SubResource("PlaceholderTexture2D_ig7tw")
 expand_icon = true
 
@@ -100,9 +109,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -56.0
+offset_top = -48.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 color = Color(0.6156863, 0.6156863, 0.6156863, 0.827451)
 
 [node name="HotbarShadow" type="ColorRect" parent="UIMiddle/HotbarIcons/Hotbar"]
@@ -111,10 +121,11 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -60.0
-offset_bottom = -56.0
+offset_top = -52.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 color = Color(0.37413925, 0.37413928, 0.37413922, 0.827451)
 
 [node name="DesktopIcons" type="Control" parent="UIMiddle"]
@@ -125,6 +136,7 @@ anchor_bottom = 1.0
 offset_top = -648.0
 offset_right = 160.0
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="Email" type="Button" parent="UIMiddle/DesktopIcons"]
 layout_mode = 0
@@ -195,3 +207,37 @@ color = Color(1.6605109e-06, 0.3841854, 0.38418546, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="UITop" type="CanvasLayer" parent="."]
+
+[node name="Email" parent="UITop" instance=ExtResource("2_0xm2m")]
+visible = false
+offset_left = 168.0
+offset_right = -48.0
+
+[node name="Notes" parent="UITop" instance=ExtResource("3_h2yge")]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -664.0
+offset_bottom = -64.0
+
+[node name="Archives" parent="UITop" instance=ExtResource("4_1bvp3")]
+visible = false
+offset_left = 408.0
+offset_top = 16.0
+offset_right = -112.0
+offset_bottom = -56.0
+
+[node name="Dictionary" parent="UITop" instance=ExtResource("6_7mycd")]
+visible = false
+offset_left = 72.0
+offset_right = -16.0
+script = ExtResource("7_272bh")
+
+[connection signal="toggled" from="UIMiddle/HotbarIcons/EmailSm" to="." method="_on_email_sm_toggled"]
+[connection signal="toggled" from="UIMiddle/HotbarIcons/NotesSm" to="." method="_on_notes_sm_toggled"]
+[connection signal="toggled" from="UIMiddle/HotbarIcons/DictionarySm" to="." method="_on_dictionary_sm_toggled"]
+[connection signal="toggled" from="UIMiddle/HotbarIcons/ArchivesSm" to="." method="_on_archives_sm_toggled"]
+[connection signal="pressed" from="UIMiddle/DesktopIcons/Email" to="." method="_on_email_pressed"]
+[connection signal="pressed" from="UIMiddle/DesktopIcons/Notes" to="." method="_on_notes_pressed"]
+[connection signal="pressed" from="UIMiddle/DesktopIcons/Dictionary" to="." method="_on_dictionary_pressed"]
+[connection signal="pressed" from="UIMiddle/DesktopIcons/Archives" to="." method="_on_archives_pressed"]

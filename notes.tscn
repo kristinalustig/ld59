@@ -9,6 +9,7 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0.45490196, 0.87058824, 1)
+shadow_size = 2
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v8as4"]
 
@@ -28,7 +29,7 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 632.0
+offset_right = 480.0
 offset_bottom = 576.0
 theme = ExtResource("1_7hqtv")
 theme_override_styles/panel = SubResource("StyleBoxFlat_7w2tp")
@@ -38,8 +39,8 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -316.0
-offset_right = 316.0
+offset_left = -240.0
+offset_right = 240.0
 offset_bottom = 40.0
 grow_horizontal = 2
 color = Color(0, 0.45490196, 0.87058824, 1)
@@ -71,11 +72,11 @@ theme_override_font_sizes/font_size = 26
 text = "Notes"
 vertical_alignment = 1
 
-[node name="TextEdit" type="TextEdit" parent="Panel"]
+[node name="NotesBox" type="TextEdit" parent="Panel"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 48.0
-offset_right = 616.0
+offset_right = 464.0
 offset_bottom = 560.0
 theme_override_colors/caret_color = Color(0.00011382764, 0.00011382824, 0.000113827795, 1)
 theme_override_colors/font_color = Color(0.0056611313, 0.0056611616, 0.0056611407, 1)

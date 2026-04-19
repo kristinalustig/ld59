@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EmailResource" load_steps=2 format=3 uid="uid://bmowbki68lln1"]
+
+[ext_resource type="Script" uid="uid://c162igxy6vl8w" path="res://email_content.gd" id="1_2hssy"]
+
+[resource]
+script = ExtResource("1_2hssy")
+sender_id = "sarah"
+subject_line = "IMPORTANT: I know it's a lot but please read"
+email_id = 1
+email_body_path_name = "email_1"
+metadata/_custom_type_script = "uid://c162igxy6vl8w"
