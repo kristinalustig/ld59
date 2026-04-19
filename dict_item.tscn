@@ -23,16 +23,16 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [node name="DictItem" type="Panel"]
-custom_minimum_size = Vector2(540, 96)
-offset_right = 540.0
+custom_minimum_size = Vector2(408, 96)
+offset_right = 408.0
 offset_bottom = 96.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lfk4k")
 script = ExtResource("1_8fre2")
 
 [node name="Word" type="Label" parent="."]
 layout_mode = 0
-offset_left = 296.0
-offset_right = 532.0
+offset_left = 160.0
+offset_right = 396.0
 offset_bottom = 96.0
 theme_override_colors/font_color = Color(0, 0.11372549, 0.24705882, 1)
 theme_override_fonts/font = ExtResource("1_m32x7")
@@ -45,7 +45,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 288.0
+offset_right = 88.0
 offset_bottom = 88.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8fre2")
 script = ExtResource("3_kgg6b")

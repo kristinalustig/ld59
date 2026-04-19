@@ -6,4 +6,9 @@ func _can_drop_data(_position, _data):
 	
 func _drop_data(_position, data):
 	data.reparent(self.get_parent())
-	data.global_position = Vector2(self.global_position.x + 10, self.global_position.y+10)
+	data.global_position = Vector2(self.global_position.x + 4, self.global_position.y+4)
+	for i in GameState.dictionary_state:
+		if GameState.dictionary_state[i]["word"] == self.get_parent().get_node("Word").text:
+			GameState.dictionary_state[i]["symbol_id"] = data.item_id
+			break
+	GameData.guess_made.emit()

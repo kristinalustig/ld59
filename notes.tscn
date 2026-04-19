@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dofyy26hb8gyk"]
+[gd_scene load_steps=7 format=3 uid="uid://dofyy26hb8gyk"]
 
 [ext_resource type="Theme" uid="uid://oqxsxsp3537j" path="res://email.tres" id="1_7hqtv"]
+[ext_resource type="Script" uid="uid://btnqsuuec7m1q" path="res://notes.gd" id="1_v8as4"]
+[ext_resource type="Texture2D" uid="uid://dv5jjhhka1pn0" path="res://close.png" id="2_7w2tp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w2tp"]
 bg_color = Color(0.9079417, 0.9079417, 0.90794164, 1)
@@ -11,8 +13,6 @@ border_width_bottom = 2
 border_color = Color(0, 0.45490196, 0.87058824, 1)
 shadow_size = 2
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v8as4"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hqtv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7w2tp"]
@@ -22,10 +22,11 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -616.0
+offset_right = -672.0
 offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v8as4")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -45,7 +46,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 color = Color(0, 0.45490196, 0.87058824, 1)
 
-[node name="TextureButton" type="TextureButton" parent="Panel/ColorRect"]
+[node name="Close" type="TextureButton" parent="Panel/ColorRect"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -58,7 +59,8 @@ offset_right = -8.0
 offset_bottom = 12.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = SubResource("PlaceholderTexture2D_v8as4")
+texture_normal = ExtResource("2_7w2tp")
+ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Panel/ColorRect"]
@@ -87,3 +89,6 @@ placeholder_text = "type your notes here!"
 wrap_mode = 1
 scroll_past_end_of_file = true
 scroll_fit_content_width = true
+
+[connection signal="gui_input" from="Panel/ColorRect" to="." method="_on_color_rect_gui_input"]
+[connection signal="pressed" from="Panel/ColorRect/Close" to="." method="_on_close_pressed"]

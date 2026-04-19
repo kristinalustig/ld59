@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cakpghrdmqs3n"]
+[gd_scene load_steps=19 format=3 uid="uid://cakpghrdmqs3n"]
 
 [ext_resource type="Theme" uid="uid://det2ttapf60iy" path="res://ui.tres" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://377fgaluprhn" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://j4duwwf73uad" path="res://email.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://d2q0nqtwtnqy8" path="res://icons.png" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dofyy26hb8gyk" path="res://notes.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://d4lqmkmnn4y54" path="res://archives.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dk1taob4i64no" path="res://dictionary.tscn" id="6_7mycd"]
-[ext_resource type="Script" uid="uid://dg3xlh4og8c5d" path="res://dictionary.gd" id="7_272bh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
 draw_center = false
@@ -14,7 +14,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.3478169, 0.347817, 0.34781674, 1)
+border_color = Color(0.34901962, 0.34901962, 0.34901962, 1)
 corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
@@ -25,10 +25,54 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 shadow_size = 1
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ig7tw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("3_5vw27")
+region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7dm0k"]
-size = Vector2(64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
+atlas = ExtResource("3_5vw27")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("3_5vw27")
+region = Rect2(250, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
+atlas = ExtResource("3_5vw27")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.34901962, 0.34901962, 0.34901962, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_size = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
+atlas = ExtResource("3_5vw27")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("3_5vw27")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("3_5vw27")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
+atlas = ExtResource("3_5vw27")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
+atlas = ExtResource("3_5vw27")
+region = Rect2(128, 128, 128, 128)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lquwl")
@@ -58,7 +102,7 @@ theme = ExtResource("1_ig7tw")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
 toggle_mode = true
-icon = SubResource("PlaceholderTexture2D_ig7tw")
+icon = SubResource("AtlasTexture_5vw27")
 expand_icon = true
 
 [node name="NotesSm" type="Button" parent="UIMiddle/HotbarIcons"]
@@ -71,7 +115,7 @@ theme = ExtResource("1_ig7tw")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
 toggle_mode = true
-icon = SubResource("PlaceholderTexture2D_ig7tw")
+icon = SubResource("AtlasTexture_4c57u")
 expand_icon = true
 
 [node name="DictionarySm" type="Button" parent="UIMiddle/HotbarIcons"]
@@ -85,7 +129,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
 toggle_mode = true
-icon = SubResource("PlaceholderTexture2D_ig7tw")
+icon = SubResource("AtlasTexture_efxa6")
 expand_icon = true
 
 [node name="ArchivesSm" type="Button" parent="UIMiddle/HotbarIcons"]
@@ -99,7 +143,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
 toggle_mode = true
-icon = SubResource("PlaceholderTexture2D_ig7tw")
+icon = SubResource("AtlasTexture_dg77c")
 expand_icon = true
 
 [node name="Hotbar" type="ColorRect" parent="UIMiddle/HotbarIcons"]
@@ -128,6 +172,17 @@ grow_vertical = 0
 mouse_filter = 2
 color = Color(0.37413925, 0.37413928, 0.37413922, 0.827451)
 
+[node name="SaveSm" type="Button" parent="UIMiddle/HotbarIcons"]
+layout_mode = 0
+offset_left = 1112.0
+offset_top = 16.0
+offset_right = 1144.0
+offset_bottom = 48.0
+theme = ExtResource("1_ig7tw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
+icon = SubResource("AtlasTexture_2cqfq")
+expand_icon = true
+
 [node name="DesktopIcons" type="Control" parent="UIMiddle"]
 layout_mode = 3
 anchors_preset = 2
@@ -146,7 +201,7 @@ offset_right = 128.0
 offset_bottom = 152.0
 theme = ExtResource("1_ig7tw")
 text = "Email"
-icon = SubResource("PlaceholderTexture2D_7dm0k")
+icon = SubResource("AtlasTexture_kek77")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -159,7 +214,7 @@ offset_right = 128.0
 offset_bottom = 280.0
 theme = ExtResource("1_ig7tw")
 text = "Notes"
-icon = SubResource("PlaceholderTexture2D_7dm0k")
+icon = SubResource("AtlasTexture_ycdy4")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -173,7 +228,7 @@ offset_bottom = 408.0
 theme = ExtResource("1_ig7tw")
 theme_override_font_sizes/font_size = 13
 text = "Dictionary"
-icon = SubResource("PlaceholderTexture2D_7dm0k")
+icon = SubResource("AtlasTexture_w48qg")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -187,7 +242,7 @@ offset_bottom = 536.0
 theme = ExtResource("1_ig7tw")
 theme_override_font_sizes/font_size = 18
 text = "Archives"
-icon = SubResource("PlaceholderTexture2D_7dm0k")
+icon = SubResource("AtlasTexture_vivmo")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -222,21 +277,21 @@ offset_bottom = -64.0
 
 [node name="Archives" parent="UITop" instance=ExtResource("4_1bvp3")]
 visible = false
-offset_left = 408.0
+offset_left = 186.0
 offset_top = 16.0
-offset_right = -112.0
+offset_right = -14.0
 offset_bottom = -56.0
 
 [node name="Dictionary" parent="UITop" instance=ExtResource("6_7mycd")]
 visible = false
-offset_left = 72.0
+offset_left = 344.0
 offset_right = -16.0
-script = ExtResource("7_272bh")
 
 [connection signal="toggled" from="UIMiddle/HotbarIcons/EmailSm" to="." method="_on_email_sm_toggled"]
 [connection signal="toggled" from="UIMiddle/HotbarIcons/NotesSm" to="." method="_on_notes_sm_toggled"]
 [connection signal="toggled" from="UIMiddle/HotbarIcons/DictionarySm" to="." method="_on_dictionary_sm_toggled"]
 [connection signal="toggled" from="UIMiddle/HotbarIcons/ArchivesSm" to="." method="_on_archives_sm_toggled"]
+[connection signal="pressed" from="UIMiddle/HotbarIcons/SaveSm" to="." method="_on_save_sm_pressed"]
 [connection signal="pressed" from="UIMiddle/DesktopIcons/Email" to="." method="_on_email_pressed"]
 [connection signal="pressed" from="UIMiddle/DesktopIcons/Notes" to="." method="_on_notes_pressed"]
 [connection signal="pressed" from="UIMiddle/DesktopIcons/Dictionary" to="." method="_on_dictionary_pressed"]

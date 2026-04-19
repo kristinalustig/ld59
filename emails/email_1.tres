@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_2hssy")
-sender_id = "sarah"
+sender_id = "Sarah Felisi"
 subject_line = "IMPORTANT: I know it's a lot but please read"
 email_id = 1
 email_body_path_name = "email_1"

@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://8bhvtkiiw6m"]
+
+[ext_resource type="Texture2D" uid="uid://ubx0vwdks7ro" path="res://archive/assets/doc_1.png" id="1_74u2a"]
+[ext_resource type="Script" uid="uid://cj6li414hgh7d" path="res://archive/doc_1.gd" id="1_mrc0h"]
+[ext_resource type="Theme" uid="uid://cvy25s415p2f2" path="res://archive/symbols.tres" id="2_mrc0h"]
+
+[node name="Lasillans" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -480.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_mrc0h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("1_74u2a")
+
+[node name="Clickables" type="Control" parent="TextureRect"]
+anchors_preset = 0
+offset_right = 672.0
+offset_bottom = 432.0
+mouse_filter = 2
+
+[node name="Lasillan" type="Button" parent="TextureRect/Clickables"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 344.0
+offset_right = 152.0
+offset_bottom = 416.0
+theme = ExtResource("2_mrc0h")
+
+[node name="Lasillan2" type="Button" parent="TextureRect/Clickables"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 0
+offset_left = 424.0
+offset_top = 344.0
+offset_right = 496.0
+offset_bottom = 416.0
+theme = ExtResource("2_mrc0h")
+
+[node name="Large" type="Button" parent="TextureRect/Clickables"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 344.0
+offset_right = 200.0
+offset_bottom = 416.0
+theme = ExtResource("2_mrc0h")
+
+[node name="Small" type="Button" parent="TextureRect/Clickables"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 344.0
+offset_right = 544.0
+offset_bottom = 416.0
+theme = ExtResource("2_mrc0h")
+
+[connection signal="pressed" from="TextureRect/Clickables/Lasillan" to="." method="_on_lasillan_pressed" flags=6]
+[connection signal="pressed" from="TextureRect/Clickables/Lasillan2" to="." method="_on_lasillan_pressed" flags=6]
+[connection signal="pressed" from="TextureRect/Clickables/Large" to="." method="_on_large_pressed" flags=6]
+[connection signal="pressed" from="TextureRect/Clickables/Small" to="." method="_on_small_pressed" flags=6]

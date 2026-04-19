@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://j4duwwf73uad"]
+[gd_scene load_steps=7 format=3 uid="uid://j4duwwf73uad"]
 
 [ext_resource type="Theme" uid="uid://oqxsxsp3537j" path="res://email.tres" id="1_b7pj5"]
 [ext_resource type="Script" uid="uid://c31s26qflbjj2" path="res://email.gd" id="1_l5d43"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_l5d43"]
+[ext_resource type="Texture2D" uid="uid://dv5jjhhka1pn0" path="res://close.png" id="3_u4565"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7pj5"]
 content_margin_left = 8.0
@@ -15,8 +14,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_u4565"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_710lg"]
 bg_color = Color(0.89981747, 0.9439146, 0.9999985, 1)
@@ -71,7 +68,8 @@ offset_right = -8.0
 offset_bottom = 12.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = SubResource("PlaceholderTexture2D_l5d43")
+texture_normal = ExtResource("3_u4565")
+ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Panel/ColorRect"]
@@ -97,10 +95,7 @@ theme_override_colors/font_selected_color = Color(0.432863, 0.07202434, 0.656155
 theme_override_constants/outline_size = 0
 theme_override_constants/line_separation = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b7pj5")
-item_count = 1
 fixed_icon_size = Vector2i(16, 16)
-item_0/text = "sample subject -- Sarah F"
-item_0/icon = SubResource("PlaceholderTexture2D_u4565")
 
 [node name="EmailContent" type="Panel" parent="."]
 layout_mode = 0
@@ -120,5 +115,7 @@ theme_override_colors/default_color = Color(0.099985994, 0.099985994, 0.09998599
 theme_override_styles/normal = SubResource("StyleBoxFlat_l5d43")
 bbcode_enabled = true
 
+[connection signal="gui_input" from="Panel/ColorRect" to="." method="_on_color_rect_gui_input"]
+[connection signal="pressed" from="Panel/ColorRect/Close" to="." method="_on_close_pressed"]
 [connection signal="item_selected" from="Panel/EmailList" to="." method="_on_email_list_item_selected"]
 [connection signal="meta_clicked" from="EmailContent/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]

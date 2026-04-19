@@ -1,10 +1,11 @@
 extends Node
 
 #what do we need to track for a save?
+var start_from_save = false
 
 var emails_received = []
 var solved_entries = []
-var dictionary_state = []
+var dictionary_state = {}
 var symbols_discovered = []
 var archive_docs_discovered = []
 var words_discovered = []
@@ -23,6 +24,7 @@ func check_for_save() -> bool:
 		words_discovered = save_data.words_discovered
 		note_contents = save_data.note_contents
 		save.close()
+		start_from_save = true
 		return true
 	return false
 	
@@ -40,5 +42,3 @@ func save_game() -> void:
 	var file = FileAccess.open("user://save.json", FileAccess.WRITE)
 	file.store_string(save_data_json)
 	file.close()
-	
-	pass
