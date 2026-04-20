@@ -1,0 +1,52 @@
+Hiya,
+
+I can't believe you already figured out so many entries!
+
+Unfortunately, my creator Kristina ran out of time to implement further story and guidance for you. She plans to create more.
+
+For now, if you want to play this on ultra hard mode, at the bottom of this email are all the additional words that you can translate (so far), and I've added a document in your archive that has an image of all of the symbols (which I have automatically added to your symbol bank in the dictionary). I wanted to include the final letter that would have been the last thing to translate in the game, but Kristina didn't have time to create it in-game.
+
+TO BE CLEAR. The rest of this is going to be pretty much impossible without all the hints and gentle guidance she was planning on giving you. She just wanted to give the truly unhinged puzzle lovers amongst you a fun lil extra adventure in xenolinguistics. She will try to add a few hint emails as well if she has time.
+
+Thank you so much for helping me study the Lasillan language.
+
+Kristina created this game, all code, art, and music, on her own, for Ludum Dare 59.
+
+Made in Godot, with sfx made in bfxr and art made in Procreate and Pixaki.
+
+Thanks to playtester Matt!
+
+Talk soon!
+Sarah
+
+WORD LIST:
+[url="after"]after[/url]
+[url="all"]all[/url]
+[url="attack"]attack[/url]
+[url="culture"]culture[/url]
+[url="die"]die[/url]
+[url="direction"]direction[/url]
+[url="go"]go[/url]
+[url="help"]help[/url]
+[url="hope"]hope[/url]
+[url="invent"]invent[/url]
+[url="large"]large[/url]
+[url="live"]live[/url]
+[url="on"]on[/url]
+[url="plan"]plan[/url]
+[url="planet"]planet[/url]
+[url="recent"]recent[/url]
+[url="rely"]rely[/url]
+[url="save"]save[/url]
+[url="send"]send[/url]
+[url="ship"]ship[/url]
+[url="small"]small[/url]
+[url="smart"]smart[/url]
+[url="space"]space[/url]
+[url="to"]to[/url]
+[url="travel"]travel[/url]
+[url="type"]type[/url]
+[url="what"]what[/url]
+[url="where"]where[/url]
+[url="why"]why[/url]
+[url="with"]with[/url]

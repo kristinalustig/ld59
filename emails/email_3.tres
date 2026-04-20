@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EmailResource" load_steps=2 format=3 uid="uid://cjwhk6tflfu7m"]
+
+[ext_resource type="Script" uid="uid://c162igxy6vl8w" path="res://email_content.gd" id="1_m33ya"]
+
+[resource]
+script = ExtResource("1_m33ya")
+sender_id = "Lili Zheng"
+subject_line = "THE HINT EMAIL"
+email_id = 3
+email_body_path_name = "email_3"
+metadata/_custom_type_script = "uid://c162igxy6vl8w"

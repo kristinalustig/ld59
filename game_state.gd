@@ -9,7 +9,10 @@ var dictionary_state = {}
 var symbols_discovered = []
 var archive_docs_discovered = []
 var words_discovered = []
-var note_contents = []
+var note_contents = ""
+
+func _ready():
+	GameState.check_for_save()
 
 func check_for_save() -> bool:
 	var does_save_exist = FileAccess.file_exists("user://save.json")
@@ -42,3 +45,12 @@ func save_game() -> void:
 	var file = FileAccess.open("user://save.json", FileAccess.WRITE)
 	file.store_string(save_data_json)
 	file.close()
+	
+func the_rest_of_them(symbols):
+	var index = 0
+	for i in symbols:
+		if index >= 27:
+			print (i)
+		index+=1
+		GameState.symbols_discovered.append(i)
+		GameData.symbol_clicked.emit(i)

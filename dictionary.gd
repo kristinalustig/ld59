@@ -26,7 +26,7 @@ func _ready():
 			if not is_placed:
 				var symbol = item.instantiate()
 				symbol.on_creation(s, GameData.symbol_data[s]["spritesheet_index"])
-				$SymbolBox.add_child(symbol)
+				$ScrollContainer2/SymbolBox.add_child(symbol)
 	
 	#in any case, we want to actually add each dictionary line in
 	for i in GameState.dictionary_state:
@@ -45,7 +45,7 @@ func _on_symbol_clicked(symbol: String):
 	if GameState.symbols_discovered.has(symbol):
 		var symbol_item = item.instantiate()
 		symbol_item.on_creation(symbol, GameData.symbol_data[symbol]["spritesheet_index"])
-		$SymbolBox.add_child(symbol_item)
+		$ScrollContainer2/SymbolBox.add_child(symbol_item)
 	
 func update_dict_state(word: String):
 	if GameState.words_discovered.has(word):

@@ -77,13 +77,94 @@
   "future": {
 	"spritesheet_index": 26
   },
-  "to": {	
+  "after": {
 	"spritesheet_index": 27
   },
-  "large": {	
+  "all": {
 	"spritesheet_index": 28
   },
-  "small": {	
+  "attack": {
 	"spritesheet_index": 29
   },
+  "culture": {
+	"spritesheet_index": 30
+  },
+  "die": {
+	"spritesheet_index": 31
+  },
+  "direction": {
+	"spritesheet_index": 32
+  },
+  "go": {
+	"spritesheet_index": 33
+  },
+  "help": {
+	"spritesheet_index": 34
+  },
+  "hope": {
+	"spritesheet_index": 35
+  },
+  "invent": {
+	"spritesheet_index": 36
+  },
+  "large": {
+	"spritesheet_index": 37
+  },
+  "live": {
+	"spritesheet_index": 38
+  },
+  "on": {
+	"spritesheet_index": 39
+  },
+  "plan": {
+	"spritesheet_index": 40
+  },
+  "planet": {
+	"spritesheet_index": 41
+  },
+  "recent": {
+	"spritesheet_index": 42
+  },
+  "rely": {
+	"spritesheet_index": 43
+  },
+  "save": {
+	"spritesheet_index": 44
+  },
+  "send": {
+	"spritesheet_index": 45
+  },
+  "ship": {
+	"spritesheet_index": 46
+  },
+  "small": {
+	"spritesheet_index": 47
+  },
+  "smart": {
+	"spritesheet_index": 48
+  },
+  "space": {
+	"spritesheet_index": 49
+  },
+  "to": {
+	"spritesheet_index": 50
+  },
+  "travel": {
+	"spritesheet_index": 51
+  },
+  "type": {
+	"spritesheet_index": 52
+  },
+  "what": {
+	"spritesheet_index": 53
+  },
+  "where": {
+	"spritesheet_index": 54
+  },
+  "why": {
+	"spritesheet_index": 55
+  },
+  "with": {
+	"spritesheet_index": 56
+  }
 }

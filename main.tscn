@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cakpghrdmqs3n"]
+[gd_scene load_steps=21 format=3 uid="uid://cakpghrdmqs3n"]
 
 [ext_resource type="Theme" uid="uid://det2ttapf60iy" path="res://ui.tres" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://377fgaluprhn" path="res://main.gd" id="1_lquwl"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d2q0nqtwtnqy8" path="res://icons.png" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dofyy26hb8gyk" path="res://notes.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://d4lqmkmnn4y54" path="res://archives.tscn" id="4_1bvp3"]
+[ext_resource type="FontFile" uid="uid://cq8mqpjdyth6a" path="res://CourierPrime-Bold.ttf" id="4_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dk1taob4i64no" path="res://dictionary.tscn" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://d32vshre8acoo" path="res://splash.PNG" id="9_kek77"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
 draw_center = false
@@ -35,7 +37,7 @@ region = Rect2(0, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
 atlas = ExtResource("3_5vw27")
-region = Rect2(250, 0, 128, 128)
+region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
 atlas = ExtResource("3_5vw27")
@@ -183,6 +185,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
 icon = SubResource("AtlasTexture_2cqfq")
 expand_icon = true
 
+[node name="SaveMsg" type="Label" parent="UIMiddle/HotbarIcons"]
+visible = false
+layout_mode = 0
+offset_left = 800.0
+offset_top = 24.0
+offset_right = 1098.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("4_5vw27")
+text = "saving is broken i am sorry"
+vertical_alignment = 2
+
 [node name="DesktopIcons" type="Control" parent="UIMiddle"]
 layout_mode = 3
 anchors_preset = 2
@@ -240,7 +253,7 @@ offset_top = 424.0
 offset_right = 127.0
 offset_bottom = 536.0
 theme = ExtResource("1_ig7tw")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 16
 text = "Archives"
 icon = SubResource("AtlasTexture_vivmo")
 icon_alignment = 1
@@ -277,15 +290,32 @@ offset_bottom = -64.0
 
 [node name="Archives" parent="UITop" instance=ExtResource("4_1bvp3")]
 visible = false
-offset_left = 186.0
-offset_top = 16.0
-offset_right = -14.0
-offset_bottom = -56.0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = -26.0
+offset_bottom = -64.0
 
 [node name="Dictionary" parent="UITop" instance=ExtResource("6_7mycd")]
 visible = false
-offset_left = 344.0
-offset_right = -16.0
+offset_left = 160.0
+offset_right = -200.0
+
+[node name="Splash" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Title" type="TextureRect" parent="Splash"]
+z_index = 1
+offset_left = 176.0
+offset_top = 16.0
+offset_right = 997.3334
+offset_bottom = 632.0
+texture = ExtResource("9_kek77")
+expand_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="Splash"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.1764706, 0.24313726, 0.7019608, 1)
 
 [connection signal="toggled" from="UIMiddle/HotbarIcons/EmailSm" to="." method="_on_email_sm_toggled"]
 [connection signal="toggled" from="UIMiddle/HotbarIcons/NotesSm" to="." method="_on_notes_sm_toggled"]

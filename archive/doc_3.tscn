@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg087y5m68nry"]
+
+[ext_resource type="Texture2D" uid="uid://chlfjset3o7q1" path="res://archive/assets/doc_3.png" id="1_d3v1n"]
+[ext_resource type="Script" uid="uid://bb3vqj0avjpmf" path="res://archive/doc_3.gd" id="1_srtvl"]
+
+[node name="Fire" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_srtvl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 536.2395
+offset_bottom = 464.0
+texture = ExtResource("1_d3v1n")
+expand_mode = 1

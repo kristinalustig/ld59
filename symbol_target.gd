@@ -11,4 +11,7 @@ func _drop_data(_position, data):
 		if GameState.dictionary_state[i]["word"] == self.get_parent().get_node("Word").text:
 			GameState.dictionary_state[i]["symbol_id"] = data.item_id
 			break
+	if not self.get_child(1):
+		add_child(GameData.s_sym_down)
+	GameData.s_sym_down.play()
 	GameData.guess_made.emit()

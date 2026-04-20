@@ -26,7 +26,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -360.0
+offset_right = -216.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -35,7 +35,7 @@ script = ExtResource("1_yg63m")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 792.0
+offset_right = 936.0
 offset_bottom = 592.0
 mouse_filter = 2
 theme = ExtResource("1_3nro6")
@@ -46,8 +46,8 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -396.0
-offset_right = 396.0
+offset_left = -468.0
+offset_right = 468.0
 offset_bottom = 40.0
 grow_horizontal = 2
 color = Color(0, 0.45490196, 0.87058824, 1)
@@ -82,10 +82,10 @@ vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_left = 344.0
-offset_top = 48.0
-offset_right = 784.0
-offset_bottom = 584.0
+offset_left = 488.0
+offset_top = 50.0
+offset_right = 928.0
+offset_bottom = 586.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3nro6")
 
 [node name="ActiveDict" type="VBoxContainer" parent="ScrollContainer"]
@@ -93,12 +93,17 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SymbolBox" type="BoxContainer" parent="."]
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 50.0
-offset_right = 336.0
+offset_top = 48.0
+offset_right = 480.0
 offset_bottom = 584.0
+
+[node name="SymbolBox" type="HFlowContainer" parent="ScrollContainer2"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("3_yg63m")
 
 [connection signal="gui_input" from="Background/ColorRect" to="." method="_on_color_rect_gui_input"]

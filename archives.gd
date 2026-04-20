@@ -1,10 +1,8 @@
 extends Control
 
 func _ready() -> void:
-	if GameState.archive_docs_discovered.size() == 0:
-		#start a new game
-		add_doc(1)
-	else:
+	GameData.add_archive.connect(_on_add_archive)
+	if GameState.archive_docs_discovered.size() != 0:
 		for e in GameState.archive_docs_discovered:
 			add_doc(e)
 		
@@ -13,13 +11,22 @@ func add_doc(archive_id: int) -> void:
 	var doc = doc_scene.instantiate()
 	$Panel/ArchiveList.add_item(doc.archive_title)
 	$Panel/ArchiveList.set_item_metadata($Panel/ArchiveList.item_count-1, doc)
+	GameState.archive_docs_discovered.append(archive_id)
 
 func _on_archive_list_item_selected(index: int) -> void:
+	var found = false
 	for child in $Panel/ArchiveContent.get_children():
-		child.queue_free()
-	var archive_data = $Panel/ArchiveList.get_item_metadata(index)
-	$Panel/ArchiveContent.add_child(archive_data)
+		if child.archive_id == index+1:
+			found = true
+			child.visible = true
+		else:
+			child.visible = false 
+	if not found:
+		var archive_data = $Panel/ArchiveList.get_item_metadata(index)
+		$Panel/ArchiveContent.add_child(archive_data)
 
+func _on_add_archive(num: int):
+	add_doc(num)
 
 func _on_close_pressed() -> void:
 	visible = false
